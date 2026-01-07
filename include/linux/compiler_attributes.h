@@ -236,7 +236,7 @@
  *
  *   gcc: https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html#index-nonstring-variable-attribute
  */
-#if __has_attribute(__nonstring__)
+#if defined(__GNUC__) && __GNUC__ >= 15
 # define __nonstring                    __attribute__((__nonstring__))
 #else
 # define __nonstring
